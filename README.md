@@ -24,3 +24,30 @@ Jupyter applications use Jupyter kernels to execute code snippets. Project Jupyt
 This repository uses a [`Dockerfile`](./Dockerfile) as [binder instantiation configuration](https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html) in order to setup an IJava kernel for use by Jupyter applications.
 
 All notebooks are stored in the [`notebooks`](./notebooks) directory, which contents are the only files exposed to students from binder instances.
+
+## Contributing
+
+The easiest way is to fork this repo and submit pull requests. To work on and expand the Jupyter notebooks, I would suggest setting up a local Jupyter instance and editing notebooks from there.
+
+The process roughly looks like this:
+
+- [Install JupyterLab](https://jupyter.org/install).
+- [Install IJava](https://github.com/SpencerPark/IJava#installing) (JDK 9+ required).
+- [Start JupyterLab inside the repository](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
+
+For example, in my case:
+
+```console
+# Install JupyterLab
+pip install jupyterlab
+
+# Install IJava
+curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
+unzip ijava-kernel.zip -d ijava-kernel
+cd ijava-kernel
+python install.py --sys-prefix
+
+# Start JupyterLab inside the repository
+cd path/to/Java2STPI
+jupyter lab
+```
