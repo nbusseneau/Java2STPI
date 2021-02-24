@@ -1,0 +1,2 @@
+Bonjour !
+Ce fichier est lu depuis Java !
