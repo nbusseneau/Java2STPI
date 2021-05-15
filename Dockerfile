@@ -5,10 +5,8 @@ RUN apt-get install -y python3-pip
 
 # Add requirements.txt
 COPY ./requirements.txt ./requirements.txt
-RUN ([ -f requirements.txt ] \
-  && pip3 install --no-cache-dir -r requirements.txt \
-  && rm requirements.txt) \
-  || pip3 install --no-cache-dir jupyter jupyterlab
+RUN pip3 install --no-cache-dir -r requirements.txt \
+  && rm requirements.txt
 
 USER root
 
